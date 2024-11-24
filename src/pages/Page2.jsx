@@ -1,7 +1,10 @@
+import { useContext } from "react"
+import { dataContext } from "../context/DataProvider"
 
 function Page2() {
+  const {data} = useContext(dataContext);
   return (
-    <div>Page2</div>
+    <div>Name: {data.name}</div>
   )
 }
 

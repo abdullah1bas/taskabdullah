@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { dataContext } from "../context/DataProvider";
 
 function Home() {
-  const [name, setName] = useState("");
+  const {data, setData} = useContext(dataContext);
+
   const navigation = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (/^[A-Za-z]+$/gi.test(name)) {
+    if (/^[A-Za-z]+$/gi.test(data.name)) {
       navigation("/page2");
     }
   };
@@ -38,7 +40,7 @@ function Home() {
               placeholder="user name"
               minLength={3}
               required
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setData(prev => ({...prev, name: e.target.value }))}
             />
             <button
               type="submit"
