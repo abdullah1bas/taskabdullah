@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [name, setName] = useState("");
+  const navigation = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name);
+    if (/^[A-Za-z]+$/gi.test(name)) {
+      navigation("/page2");
+    }
   };
   return (
     <section className="relative -pt-16 h-lvh bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
@@ -32,6 +36,7 @@ function Home() {
               className="flex-2 focus:outline-none px-3 rounded border border-rose-600 text-rose-600"
               type="text"
               placeholder="user name"
+              minLength={3}
               required
               onChange={(e) => setName(e.target.value)}
             />

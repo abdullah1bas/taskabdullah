@@ -22,7 +22,6 @@ const router = createBrowserRouter(
       <Route path="page3" element={<Page3 />} />
       <Route path="page4" element={<Page4 />} />
       <Route path="page5" element={<Page5 />} />
-      {/* ... etc. */}
     </Route>
   ),
   {
