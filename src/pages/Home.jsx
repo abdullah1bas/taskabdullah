@@ -8,7 +8,7 @@ function Home() {
   const navigation = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (/^[A-Za-z]+$/gi.test(data.name)) {
+    if (/^[\u0621-\u064A\u0660-\u0669A-Za-z\s]+$/gi.test(data.name)) {
       navigation("/page2");
     }
   };
