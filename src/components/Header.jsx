@@ -3,10 +3,10 @@ import { useNavigate } from "react-router";
 
 const links = [
   { name: "Home", link: "/" },
-  { name: "Page2", link: "/page2" },
-  { name: "Page3", link: "/page3" },
-  { name: "Page4", link: "/page4" },
-  { name: "Page5", link: "/page5" },
+  { name: "Email", link: "/page2" },
+  { name: "Number", link: "/page3" },
+  { name: "Date", link: "/page4" },
+  { name: "Data", link: "/page5" },
 ];
 
 function Header() {

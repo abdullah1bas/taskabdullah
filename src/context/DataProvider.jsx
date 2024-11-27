@@ -4,7 +4,7 @@ export const dataContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 function DataProvider({ children }) {
-  const [data, setData] = useState({ name: "" , number: ""});
+  const [data, setData] = useState({ name: "" , number: "", email: "", date: ""});
   return <dataContext.Provider value={{data, setData}}>{children}</dataContext.Provider>;
 }
 
